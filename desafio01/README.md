@@ -21,7 +21,7 @@ Essa aplicação será utilizada para armazenar projetos e suas tarefas.
 
 ## Exemplo:
 Se eu chamar a rota
-__POST /projects repassando__ { id: 1, title: ’Novo projeto’ }
+__POST /projects__ repassando { id: 1, title: ’Novo projeto’ }
 e a rota __POST /projects/1/tasks__ com { title: ’Nova tarefa’ },
 meu array de projetos deve ficar assim:
 ```json
