@@ -27,6 +27,7 @@ server.put('/projects/:id', (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
 
+  //arrow function, receive p, if p.id == id(from req) return true
   const project = projects.find(p => p.id == id);
 
   project.title = title;
