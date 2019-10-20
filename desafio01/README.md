@@ -6,9 +6,9 @@ Essa aplicação será utilizada para armazenar projetos e suas tarefas.
 - **POST /projects**: A rota deve receber id e title dentro corpo de cadastrar um novo projeto dentro de um array no seguinte formato:
 ```json
 {
-  id: "1",
-  title: ’Novo projeto’,
-  tasks: []
+  "id": "1",
+  "title": "Novo projeto",
+  "tasks": []
 }
 ```
  > >Certifique-se de enviar tanto o ID quanto o título do projeto no formato string com àspas duplas.
@@ -27,9 +27,9 @@ meu array de projetos deve ficar assim:
 ```json
 [
   {
-    id: "1",
-    title: ’Novo projeto’,
-    tasks: [’Nova tarefa’]
+    "id": "1",
+    "title": "Novo projeto",
+    "tasks": ["Nova tarefa"]
   }
 ]
 ```
