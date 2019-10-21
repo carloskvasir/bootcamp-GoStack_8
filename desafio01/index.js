@@ -1,4 +1,5 @@
 const express = require("express");
+let countCalls = 1;
 
 const server = express();
 server.use(express.json());
@@ -16,6 +17,14 @@ function thisIdExists(req, res, next) {
 
   return next();
 }
+
+//This global function print log
+server.use((req, res, next) => {
+  console.log(`API is called ${countCalls} times.`);
+
+  countCalls++;
+  next();
+});
 
 server.post('/projects', (req, res) => {
   const { id, title } = req.body;
