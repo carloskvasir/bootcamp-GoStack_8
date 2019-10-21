@@ -46,4 +46,17 @@ server.delete('/projects/:id', (req, res) => {
 
   return res.json({ 'ok': 'ok' });
 });
+
+server.post('/projects/:id/tasks', (req, res) => {
+  const { id } = req.params;
+  const { title } = req.body;
+
+  const project = projects.find(p => p.id == id);
+  const indexOfProject = projects.indexOf(project);
+
+  projects[indexOfProject].tasks.push(title);
+
+  return res.json(project);
+});
+
 server.listen(3000);
