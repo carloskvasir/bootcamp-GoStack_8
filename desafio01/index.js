@@ -38,6 +38,12 @@ server.put('/projects/:id', (req, res) => {
 server.delete('/projects/:id', (req, res) => {
   const { id } = req.params;
 
+  const project = projects.find(p => p.id == id);
 
+  const indexOfProject = projects.indexOf(project);
+
+  projects.splice(indexOfProject, 1);
+
+  return res.json({ 'ok': 'ok' });
 });
 server.listen(3000);
