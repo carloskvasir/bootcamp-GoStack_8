@@ -4,12 +4,14 @@ Essa aplicação será utilizada para armazenar projetos e suas tarefas.
 
 ## Rotas
 - **POST /projects**: A rota deve receber id e title dentro corpo de cadastrar um novo projeto dentro de um array no seguinte formato:
-```json
-{
-  "id": "1",
-  "title": "Novo projeto",
-  "tasks": []
-}
+```js
+[
+  {
+    id: "1",
+    title: "Novo projeto",
+    tasks: []
+  }
+];
 ```
  > >Certifique-se de enviar tanto o ID quanto o título do projeto no formato string com àspas duplas.
 - **GET /projects**: Rota que lista todos projetos e suas tarefas;
@@ -24,14 +26,14 @@ Se eu chamar a rota
 __POST /projects__ repassando { id: 1, title: ’Novo projeto’ }
 e a rota __POST /projects/1/tasks__ com { title: ’Nova tarefa’ },
 meu array de projetos deve ficar assim:
-```json
+```js
 [
   {
-    "id": "1",
-    "title": "Novo projeto",
-    "tasks": ["Nova tarefa"]
+    id: "1",
+    title: "Novo projeto",
+    tasks: ["Nova tarefa"]
   }
-]
+];
 ```
 ## Middlewares
 - Crie um middleware que será utilizado em todas rotas que recebem o ID do projeto nos parâmetros da URL que verifica se o projeto com aquele ID existe. Se não existir retorne um erro, caso contrário permita a requisição continuar normalmente;
