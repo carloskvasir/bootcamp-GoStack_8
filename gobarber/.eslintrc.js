@@ -14,6 +14,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "prettier/prettier": "error",
     // todos os metodos da clase usam this
     "class-methods-use-this": "off",
     // não pode manipular parametros recebidos
