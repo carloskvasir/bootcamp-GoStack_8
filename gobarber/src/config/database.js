@@ -8,5 +8,7 @@ module.exports = {
     timestamps: true,
     underscorded: true,
     underscordedAll: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
   },
 };
