@@ -5,7 +5,8 @@
   "author": "Carlos Lima (kvasir)",
   "license": "MPL-2.0",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "sucrase-node ./src/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
