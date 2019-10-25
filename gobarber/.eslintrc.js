@@ -18,7 +18,7 @@ module.exports = {
     // todos os metodos da clase usam this
     "class-methods-use-this": "off",
     // não pode manipular parametros recebidos
-    "no-param-ressign": "off",
+    "no-param-reassign": "off",
     // use apenas camelCase
     "camelcase":"off",
     // Não de erro quando não utilizar a var next do express
