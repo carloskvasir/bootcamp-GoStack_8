@@ -1,0 +1,13 @@
+# This is necessary requests to test Users
+@baseUrl = http://localhost:3000
+@resorce = users
+
+# UsersController.store
+POST {{baseUrl}}/{{resorce}}
+Content-Type: application/json
+
+{
+  "name": "carlos tester",
+  "email": "test1@test.com",
+  "password": "testpass"
+}

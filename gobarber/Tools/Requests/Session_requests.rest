@@ -1,0 +1,12 @@
+# This is necessary requests to test Sessions
+@baseUrl = http://localhost:3000
+@resorce = sessions
+
+# SessionController.store
+POST {{baseUrl}}/{{resorce}}
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "testpass"
+}
