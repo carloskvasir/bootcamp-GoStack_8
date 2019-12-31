@@ -2,7 +2,11 @@ import User from '../models/User';
 
 class ProviderController {
   async index(req, res) {
-    return res.json({ ok: 'ok' });
+    const providers = await User.findAll({
+      where: { provider: true },
+      attributes: ['id', 'name', 'email', 'avatar_id'],
+    });
+    return res.json({ providers });
   }
 }
 export default new ProviderController();
