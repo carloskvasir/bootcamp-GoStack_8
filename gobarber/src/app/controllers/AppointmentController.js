@@ -59,7 +59,7 @@ class AppointmentController {
     }
 
     /**
-     * Check fot past dates
+     * Check for past dates
      */
     const hourStart = startOfHour(parseISO(date));
 
