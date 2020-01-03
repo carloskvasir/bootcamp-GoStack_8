@@ -4,7 +4,7 @@ module.exports = {
     node: true,
   },
   extends: ['airbnb-base', 'prettier'],
-  plugins:['prettier'],
+  plugins: ['prettier', 'eslint-plugin-import-helpers'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -14,14 +14,28 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "prettier/prettier": "error",
+    'prettier/prettier': 'error',
     // todos os metodos da clase usam this
-    "class-methods-use-this": "off",
+    'class-methods-use-this': 'off',
     // não pode manipular parametros recebidos
-    "no-param-reassign": "off",
+    'no-param-reassign': 'off',
     // use apenas camelCase
-    "camelcase":"off",
+    camelcase: 'off',
     // Não de erro quando não utilizar a var next do express
-    "no-unused-vars": ["error", {"argsIgnorePattern": "next"}]
+    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        // example configuration
+        newlinesBetween: 'always',
+        groups: [
+          'module',
+          '/^@shared/',
+          '/Controller$/',
+          [('parent', 'sibling', 'index')],
+        ],
+        alphabetize: { order: 'asc', ignoreCase: true },
+      },
+    ],
   },
 };
