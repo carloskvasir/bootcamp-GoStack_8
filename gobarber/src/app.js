@@ -1,6 +1,7 @@
+import compression from 'compression';
 import express from 'express';
 import path from 'path';
-import compression from 'compression';
+
 import routes from './routes';
 
 import './database';
