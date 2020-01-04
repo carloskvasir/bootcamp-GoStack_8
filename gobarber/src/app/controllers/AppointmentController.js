@@ -1,9 +1,11 @@
-import { startOfHour, parseISO, isBefore } from 'date-fns';
+import { startOfHour, parseISO, isBefore, format } from 'date-fns';
+import ptbr from 'date-fns/locale/pt-BR';
 import * as Yup from 'yup';
 
 import Appointment from '../models/Appointment';
 import File from '../models/File';
 import User from '../models/User';
+import Notification from '../schemas/Notification';
 
 class AppointmentController {
   async index(req, res) {
@@ -88,6 +90,18 @@ class AppointmentController {
       user_id: req.userId,
       provider_id,
       date,
+    });
+    /**
+     * Notify appointment provider
+     */
+    const user = await User.findByPk(req.userId);
+    const formattedDate = format(hourStart, "dd 'de' MMMM' às 'H:mm'h'", {
+      locale: ptbr,
+    });
+
+    await Notification.create({
+      content: `Novo agendamento de ${user.name} para dia ${formattedDate}`,
+      user: provider_id,
     });
 
     return res.json(appointment);
