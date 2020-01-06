@@ -102,3 +102,6 @@ public
 
 # tempfiles uploaders
 tmp/uploads/
+
+# vscode configs
+.vscode/
