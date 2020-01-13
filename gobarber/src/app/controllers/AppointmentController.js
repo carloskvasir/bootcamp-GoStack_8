@@ -136,8 +136,6 @@ class AppointmentController {
     appointment.canceled_at = new Date();
     await appointment.save();
 
-    console.log(`${appointment.provider.name} <${appointment.provider.email}>`);
-
     await Mail.sendMail({
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
       subject: 'Agendamento cancelado',
