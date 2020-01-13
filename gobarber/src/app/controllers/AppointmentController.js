@@ -140,9 +140,7 @@ class AppointmentController {
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
       subject: 'Agendamento cancelado',
       text: 'Vôce tem um novo cancelamento.',
-    })
-      .then(success => console.log('success: ', success))
-      .catch(error => console.log('error: ', error));
+    });
 
     return res.json(appointment);
   }
